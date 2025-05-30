@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lieferzonen und Routenplaner</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/@turf/turf/turf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
+</head>
+<body>
+  <div class="controls">
+    <label>Adresse suchen:</label>
+    <input type="text" id="addressInput" placeholder="Adresse eingeben" />
+    <button onclick="searchOnlyPoint()">Suchen</button>
+
+    <label>Kategorie:</label>
+    <select id="categorySelect">
+      <option value="all">Alle</option>
+      <option value="kompost">Kompostplatz</option>
+      <option value="worker">Mitarbeiter</option>
+    </select>
+    <button onclick="findNearestSupplier()">Nächster finden</button>
+
+    <hr>
+
+    <label>Route planen:</label>
+    <input type="text" id="fromAddress" placeholder="Startadresse (leer = Lager)" />
+    <input type="text" id="toAddress" placeholder="Zieladresse" />
+    <button onclick="routeBetweenTwoPoints()">Route anzeigen</button>
+
+    <div id="routeInfo"></div>
+  </div>
+
+  <div id="map"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.controls {
+  position: absolute;
+  top: 10px;
+  left: 50px;
+  z-index: 1000;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  width: 280px;
+  font-size: 14px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.controls input,
+.controls select {
+  width: 100%;
+  margin-bottom: 6px;
+  padding: 4px;
+  font-size: 14px;
+}
+
+.controls button {
+  width: 100%;
+  margin-bottom: 6px;
+  padding: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#map {
+  width: 100vw;
+  height: 100vh;
+}
+
+#routeInfo {
+  font-weight: bold;
+  margin-top: 8px;
+}
