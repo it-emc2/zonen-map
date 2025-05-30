@@ -207,4 +207,22 @@ async function drawRoute(fromCoords, toCoords, label = "") {
     `${label ? label + "\n" : ""}Entfernung: ${distance.toFixed(1)} km | Dauer: ${duration.toFixed(0)} min`;
 }
 
+ const infoBtn = document.getElementById("info-button");
+  const modal = document.getElementById("info-modal");
+  const closeBtn = document.querySelector(".close-button");
+
+  infoBtn.addEventListener("click", () => {
+    modal.style.display = "block";
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target == modal) {
+      modal.style.display = "none";
+    }
+  });
+  
 initMap();
