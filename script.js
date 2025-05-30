@@ -2,22 +2,22 @@ let map, centerCoords;
 let userMarker = null;
 let routeLayer = null;
 
-const address = "Kornhausacker 10, 95030 Hof";
+const address = "Waldstraße 5, 95032 Hof";
 
 const zones = [
-  { radius: 4.5, price: 21, time: "10 min", name: "Zone 1", color: "green" },
-  { radius: 14, price: 31.5, time: "15 min", name: "Zone 2", color: "blue" },
-  { radius: 24, price: 41.5, time: "20 min", name: "Zone 3", color: "orange" },
-  { radius: 34, price: 49.5, time: "30 min", name: "Zone 4", color: "purple" },
-  { radius: 44, price: 60.9, time: "40 min", name: "Zone 5", color: "red" },
-  { radius: 54, price: 60.9, time: "50 min", name: "Zone 6", color: "#FFFF" },
-  { radius: 64, price: 60.9, time: "60 min", name: "Zone 7", color: "#FFFF" },
-  { radius: 74, price: 60.9, time: "70 min", name: "Zone 8", color: "#FFFF" },
-  { radius: 84, price: 60.9, time: "80 min", name: "Zone 9", color: "#FFFF" },
-  { radius: 94, price: 60.9, time: "90 min", name: "Zone 10", color: "#FFFF" },
-  { radius: 104, price: 60.9, time: "100 min", name: "Zone 11", color: "#FFFF" },
-  { radius: 114, price: 60.9, time: "110 min", name: "Zone 12", color: "#FFFF" },
-  { radius: 124, price: 60.9, time: "120 min", name: "Zone 13", color: "#FFFF" }
+  { radius: 4.5, price: 21, time: "10 min", name: "Zone 1", bauSZ: "39,66 €/Stk", bauKK: "46,33 €/Stk", color: "green" },
+  { radius: 14, price: 31.5, time: "15 min", name: "Zone 2", bauSZ: "59,50 €/Stk", bauKK: "69,50 €/Stk", color: "blue" },
+  { radius: 24, price: 41.5, time: "20 min", name: "Zone 3", bauSZ: "79,33 €/Stk", bauKK: "92,66 €/Stk", color: "orange" },
+  { radius: 34, price: 49.5, time: "30 min", name: "Zone 4", bauSZ: "119,00 €/Stk", bauKK: "139,00 €/Stk", color: "purple" },
+  { radius: 44, price: 60.9, time: "40 min", name: "Zone 5", bauSZ: "158,66 €/Stk", bauKK: "185,33 €/Stk", color: "red" },
+  { radius: 54, price: 60.9, time: "50 min", name: "Zone 6", bauSZ: "198,32 €/Stk", bauKK: "231,66 €/Stk", color: "#FFFF" },
+  { radius: 64, price: 60.9, time: "60 min", name: "Zone 7", bauSZ: "238,00 €/Stk", bauKK: "278,00 €/Stk", color: "#FFFF" },
+  { radius: 74, price: 60.9, time: "70 min", name: "Zone 8", bauSZ: "277,65 €/Stk", bauKK: "324,32 €/Stk", color: "#FFFF" },
+  { radius: 84, price: 60.9, time: "80 min", name: "Zone 9", bauSZ: "317,31 €/Stk", bauKK: "370,66 €/Stk", color: "#FFFF" },
+  { radius: 94, price: 60.9, time: "90 min", name: "Zone 10", bauSZ: "356,80 €/Stk", bauKK: "416,99 €/Stk", color: "#FFFF" },
+  { radius: 104, price: 60.9, time: "100 min", name: "Zone 11", bauSZ: "395,08 €/Stk", bauKK: "461,48 €/Stk", color: "#FFFF" },
+  { radius: 114, price: 60.9, time: "110 min", name: "Zone 12", bauSZ: "435,54 €/Stk", bauKK: "508,74 €/Stk", color: "#FFFF" },
+  { radius: 124, price: 60.9, time: "120 min", name: "Zone 13", bauSZ: "476,00 €/Stk", bauKK: "556,00 €/Stk", color: "#FFFF"}
 ];
 
 const suppliers = [
@@ -33,8 +33,25 @@ const suppliers = [
   { name: "Kompostplatz 95659 Arzberg", coords: [50.08928934273383, 12.185042315652119], category: "kompost" },
   { name: "Kompostplatz Lorenzreuth", coords: [50.03792008189825, 12.094835344875504], category: "kompost" },
   { name: "Kompostplatz 96317 Kronach", coords: [50.03792008189825, 12.094835344875504], category: "kompost" },
-  { name: "Mitarbeiter Ivan", coords: [50.35, 11.85], category: "worker" },
-  { name: "Mitarbeiter Olga", coords: [50.25, 11.95], category: "worker" }
+
+  { name: "Kompostplatz Münchberg-Solg", coords: [50.16912606200196, 11.732387888362897], category: "kompost" },
+  { name: "Kompostplatz Naila-Kalkofen", coords: [50.321553132583084, 11.683942292036736], category: "kompost" },
+  { name: "Kompostplatz Schwarzenbach a.d.Saale (Tannenlohe)", coords: [50.221516618782125, 11.974603126417627], category: "kompost" },
+  { name: "Kompostwerk Schönau", coords: [50.65927419725508, 12.56806135369901], category: "kompost" },
+  { name: "Kompostieranlage Rüsdorf (Lichtenstein)", coords: [50.7885745037047, 12.637593494721026], category: "kompost" },
+  { name: "Kompostieranlage 09217 Burgstädt", coords: [50.95038098567019, 12.789476234363692], category: "kompost" },
+  { name: "Kompostieranlage Hartmannsdorf", coords: [50.873534690852736, 12.79393110644632], category: "kompost" },
+  { name: "Kompostieranlage Am Buchstein, Mistelbach", coords: [49.923084457870495, 11.535397732609493], category: "kompost" },
+  { name: "Kompostieranlage Bamberg, Rheinstr. 4b", coords: [49.911953934330974, 10.855838758124618], category: "kompost" },
+  { name: "Kompostplatz Wiesenfeld, Lautertal", coords: [50.29566101248906, 10.909201468607424], category: "kompost" },
+  { name: "Kompostieranlage Lichtenfels", coords: [50.15113516883297, 11.094353220707111], category: "kompost" },
+  { name: "Kompostieranlage Rödental/Blumenrod", coords: [50.27352162562109, 11.0902077001784], category: "kompost" },
+  { name: "Kompostplatz Plauen, Klopstockstraße 15", coords: [50.51375123879153, 12.14101235537659], category: "kompost" },
+  { name: "Kompostplatz Schneidenbach", coords: [50.58801296296942, 12.311517841320558], category: "kompost" },
+  { name: "Kompostplatz Falkenstein", coords: [50.47508641370943, 12.348149052090648], category: "kompost" },
+  { name: "Kompostplatz Viereth-Trunstadt", coords: [49.91651788713058, 10.777496378348456], category: "kompost" },
+
+  { name: "Kornhausacker 10", coords: [50.32386060640727, 11.891493203783135], category: "KH" }
 ];
 
 async function initMap() {
@@ -80,7 +97,7 @@ function drawRingZones(centerLonLat) {
     layer.on("click", function (e) {
       L.popup()
         .setLatLng(e.latlng)
-        .setContent(`<strong>${zone.name}</strong><br>Preis: ${zone.price} €<br>Zeit: ${zone.time}`)
+        .setContent(`<strong>${zone.name}</strong><br>Preis: ${zone.price} €<br>Zeit: ${zone.time}<br>BauSZ: ${zone.bauSZ}<br>BauKK: ${zone.bauKK}`)
         .openOn(map);
     });
 
