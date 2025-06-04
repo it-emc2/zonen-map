@@ -21,35 +21,49 @@ const zones = [
 ];
 
 const suppliers = [
-  { name: "Kompostanlage Feilitzsch", coords: [50.374900, 11.928028], category: "kompost" },
-  { name: "Kompostplatz Rehau/Wurlitz", coords: [50.25872667259882, 12.00456360809713], category: "kompost" },
-  { name: "Kompostplatz Oberkotzau", coords: [50.26991953857275, 11.967141427594045], category: "kompost" },
-  { name: "Kompostanlage Konradsreuth", coords: [50.28308424855206, 11.865517892062451], category: "kompost" },
-  { name: "Kompostplatz Epplas", coords: [50.31205850660188, 11.808035878230756], category: "kompost" },
-  { name: "Kompostplatz Wacholderbusch", coords: [50.3427448739316, 11.775990786090679], category: "kompost" },
-  { name: "Kompostierplatz der Stadt Helmbrechts", coords: [50.24017903374207, 11.746155914408092], category: "kompost" },
-  { name: "Kompostplatz Steinselb 14, 95100 Selb", coords: [50.172798, 12.058217], category: "kompost" },
-  { name: "Kompostplatz 95709 Tröstau", coords: [50.055672046082805, 11.926061012454742], category: "kompost" },
-  { name: "Kompostplatz 95659 Arzberg", coords: [50.08928934273383, 12.185042315652119], category: "kompost" },
-  { name: "Kompostplatz Lorenzreuth", coords: [50.03792008189825, 12.094835344875504], category: "kompost" },
-  { name: "Kompostplatz 96317 Kronach", coords: [50.03792008189825, 12.094835344875504], category: "kompost" },
+ { name: "Kompostanlage Feilitzsch", coords: [50.374943, 11.928075], category: "kompost" },
 
-  { name: "Kompostplatz Münchberg-Solg", coords: [50.16912606200196, 11.732387888362897], category: "kompost" },
-  { name: "Kompostplatz Naila-Kalkofen", coords: [50.321553132583084, 11.683942292036736], category: "kompost" },
-  { name: "Kompostplatz Schwarzenbach a.d.Saale (Tannenlohe)", coords: [50.221516618782125, 11.974603126417627], category: "kompost" },
-  { name: "Kompostwerk Schönau", coords: [50.65927419725508, 12.56806135369901], category: "kompost" },
-  { name: "Kompostieranlage Rüsdorf (Lichtenstein)", coords: [50.7885745037047, 12.637593494721026], category: "kompost" },
-  { name: "Kompostieranlage 09217 Burgstädt", coords: [50.95038098567019, 12.789476234363692], category: "kompost" },
-  { name: "Kompostieranlage Hartmannsdorf", coords: [50.873534690852736, 12.79393110644632], category: "kompost" },
-  { name: "Kompostieranlage Am Buchstein, Mistelbach", coords: [49.923084457870495, 11.535397732609493], category: "kompost" },
-  { name: "Kompostieranlage Bamberg, Rheinstr. 4b", coords: [49.911953934330974, 10.855838758124618], category: "kompost" },
-  { name: "Kompostplatz Wiesenfeld, Lautertal", coords: [50.29566101248906, 10.909201468607424], category: "kompost" },
-  { name: "Kompostieranlage Lichtenfels", coords: [50.15113516883297, 11.094353220707111], category: "kompost" },
-  { name: "Kompostieranlage Rödental/Blumenrod", coords: [50.27352162562109, 11.0902077001784], category: "kompost" },
-  { name: "Kompostplatz Plauen, Klopstockstraße 15", coords: [50.51375123879153, 12.14101235537659], category: "kompost" },
-  { name: "Kompostplatz Schneidenbach", coords: [50.58801296296942, 12.311517841320558], category: "kompost" },
-  { name: "Kompostplatz Falkenstein", coords: [50.47508641370943, 12.348149052090648], category: "kompost" },
-  { name: "Kompostplatz Viereth-Trunstadt", coords: [49.91651788713058, 10.777496378348456], category: "kompost" },
+  { name: "Kompostplatz Rehau/Wurlitz", coords: [50.254611, 12.005889], category: "kompost" },
+
+  { name: "Kompostplatz Oberkotzau", coords: [50.264758, 11.967372], category: "kompost" },
+
+  { name: "Kompostanlage Konradsreuth", coords: [50.279375, 11.864807], category: "kompost" },
+
+  { name: "Kompostplatz Epplas", coords: [50.308854, 11.808464], category: "kompost" },
+
+  { name: "Kompostplatz Wacholderbusch", coords: [50.337026, 11.778064], category: "kompost" },
+
+  { name: "Kompostplatz Steinselb 14, 95100 Selb", coords: [50.172841, 12.058109], category: "kompost" },
+
+  { name: "Kompostplatz Vordorf (etwas außerhab)", coords: [50.042496, 11.923006], category: "kompost" },
+
+  { name: "Kompostplatz Vordorf (in dem Ort)", coords: [50.048232, 11.919693], category: "kompost" },
+
+  { name: "Kompostplatz 95659 Arzberg", coords: [50.074340, 12.181042], category: "kompost" },
+
+  { name: "Kompostplatz Marktredwitz/Lorenzreuth", coords: [50.022971, 12.095975], category: "kompost" },
+
+  { name: "Kompostplatz Münchberg-Solg", coords: [50.169170, 11.732705], category: "kompost" },
+
+  { name: "Kompostplatz Naila", coords: [50.321480, 11.683966], category: "kompost" },
+
+  { name: "Kompostplatz Schwarzenbach a.d.Saale", coords: [50.221471, 11.974884], category: "kompost" },
+
+  { name: "Kompostwerk Schönau", coords: [50.659697, 12.568081], category: "kompost" },
+
+  { name: "Kompostieranlage Rüsdorf (Lichtenstein)", coords: [50.777049, 12.637631], category: "kompost" },
+
+  { name: "Kompostieranlage 09217 Burgstädt", coords: [50.945985, 12.793613], category: "kompost" },
+
+  { name: "Kompostieranlage Hartmannsdorf", coords: [50.873543, 12.794233], category: "kompost" },
+
+  { name: "Kompostplatz 96268 Mitwitz", coords: [50.235460, 11.208181], category: "kompost" },
+
+  { name: "Kompostplatz Kulmbach", coords: [50.130584, 11.545471], category: "kompost" },
+
+  { name: "Kompostplatz Wunsiedel/Wintersberg", coords: [50.042063, 12.052693], category: "kompost" },
+
+
 
   { name: "Kornhausacker 10", coords: [50.32386060640727, 11.891493203783135], category: "KH" }
 ];
