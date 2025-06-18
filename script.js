@@ -63,6 +63,8 @@ const suppliers = [
 
   { name: "Kompostplatz Wunsiedel/Wintersberg", coords: [50.042063, 12.052693], category: "kompost" },
 
+  { name: "Grüngut-Kompostierungsanlage des Landkreises Kulmbach", coords: [50.130691, 11.545523], category: "kompost" },
+
 
 
   { name: "Kornhausacker 10", coords: [50.32386060640727, 11.891493203783135], category: "KH" }
